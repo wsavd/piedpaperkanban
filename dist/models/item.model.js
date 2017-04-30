@@ -21,6 +21,6 @@ var userSchema = _mongoose2.default.Schema({
                 type: Date,
                 default: Date.now
         }
-}); // app/models/user.js
+}, { versionKey: false }); // app/models/user.js
 // load the things we need
 exports.default = _mongoose2.default.model('User', userSchema);
