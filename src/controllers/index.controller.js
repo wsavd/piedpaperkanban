@@ -1,5 +1,5 @@
 import Item from '../models/item.model';
-import User from '../models/user'
+import User from '../models/users'
 
 function index(req, res) {
     res.json('Hello from API on ES6');
