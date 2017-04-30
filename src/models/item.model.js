@@ -1,14 +1,9 @@
-import mongoose from 'mongoose'
+var mongoose = require('mongoose');
 
-const itemSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
+var ItemSchema = mongoose.Schema({
+	releaseDate: {
+		type: Date
+	}
 });
 
-export default mongoose.model('Item', itemSchema)
+var Item = module.exports = mongoose.model('Item', ItemSchema);

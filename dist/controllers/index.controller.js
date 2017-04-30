@@ -8,6 +8,10 @@ var _item = require('../models/item.model');
 
 var _item2 = _interopRequireDefault(_item);
 
+var _user = require('../models/user');
+
+var _user2 = _interopRequireDefault(_user);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function index(req, res) {
@@ -15,8 +19,8 @@ function index(req, res) {
 }
 
 function load(req, res) {
-    _item2.default.find().then(function (results) {
-        return res.json(results);
+    _user2.default.find({}, function (err, results) {
+        res.json(results);
     });
 }
 
