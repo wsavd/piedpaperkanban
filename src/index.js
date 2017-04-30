@@ -1,6 +1,12 @@
 import express from 'express';
 const app = express();
 
+import bodyParser from 'body-parser'
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 //db
 import mongoose from 'mongoose'
 mongoose.Promise = global.Promise;
@@ -16,6 +22,7 @@ app.use('/api/v1', routes);
 
 app.set('port', (process.env.PORT || 3005))
 // arrow functions
+
 app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'))
 })

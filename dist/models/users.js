@@ -1,14 +1,21 @@
 'use strict';
 
-// app/models/user.js
-// load the things we need
-var mongoose = require('mongoose');
+Object.defineProperty(exports, "__esModule", {
+        value: true
+});
+
+var _mongoose = require('mongoose');
+
+var _mongoose2 = _interopRequireDefault(_mongoose);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //var bcrypt   = require('bcrypt-nodejs');
 
 // define the schema for our user model
-var userSchema = mongoose.Schema({
+var userSchema = _mongoose2.default.Schema({
         email: String,
         password: String
-});
-
-module.exports = mongoose.model('User', userSchema);
+}); // app/models/user.js
+// load the things we need
+exports.default = _mongoose2.default.model('User', userSchema);

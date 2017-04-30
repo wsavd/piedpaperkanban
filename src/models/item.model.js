@@ -1,9 +1,17 @@
-var mongoose = require('mongoose');
+// app/models/user.js
+// load the things we need
+import mongoose from 'mongoose';
+//var bcrypt   = require('bcrypt-nodejs');
 
-var ItemSchema = mongoose.Schema({
-	releaseDate: {
-		type: Date
-	}
+// define the schema for our user model
+const userSchema = mongoose.Schema({
+        title:{
+                type: String
+        },
+        createdAt: {
+                type: Date,
+                default: Date.now
+        }
 });
 
-var Item = module.exports = mongoose.model('Item', ItemSchema);
+export default mongoose.model('User', userSchema);

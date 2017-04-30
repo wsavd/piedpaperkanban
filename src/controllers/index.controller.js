@@ -1,14 +1,17 @@
 import Item from '../models/item.model';
-import User from '../models/users'
-
-function index(req, res) {
-    res.json('Hello from API on ES6');
-}
 
 function load(req, res) {
-     User.find({}, function(err, results){
-    res.json(results);
-  });
+  Item.find()
+    .then(results => res.json(results))
 }
 
-export default {index, load}
+function create(req, res) {
+  const item = new Item({
+    title: req.body.title,
+  });
+
+  item.save()
+    .then(savedItem => res.json(savedItem))
+}
+
+export default {load, create}

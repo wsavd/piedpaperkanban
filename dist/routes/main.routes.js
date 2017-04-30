@@ -16,9 +16,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var router = _express2.default.Router();
 
-router.get('/', _index2.default.index);
+//GET /api/v1/users - Get list of items
 router.get('/items', _index2.default.load);
-//router.post('/items/new', indexCtrl.create);
+//POST /api/v1/items - Create new item
+router.post('/items', _index2.default.create);
 
 // Exporting an object as the default import for this module
 exports.default = router;
