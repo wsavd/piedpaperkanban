@@ -19,7 +19,7 @@ var app = (0, _express2.default)();
 //db
 
 _mongoose2.default.Promise = global.Promise;
-app.set('database', process.env.MONGODB_URI || 'mongodb://admin0:admin0@ds145828.mlab.com:45828/test9797');
+app.set('database', process.env.MONGODB_URI || 'mongodb://admin:admin@ds125481.mlab.com:25481/piedpiperkanbandb');
 //const uri = 'localhost/books';
 _mongoose2.default.connect(app.get('database')).then(function () {
   return console.log('connection succesful');
