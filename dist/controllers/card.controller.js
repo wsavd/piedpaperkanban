@@ -17,10 +17,10 @@ function read(req, res) {
 }
 
 function create(req, res) {
-  var Card = new Card({
+  var card = new _card2.default({
     title: req.body.title
   });
-  Card.save().then(function (savedCard) {
+  card.save().then(function (savedCard) {
     return res.json(savedCard);
   });
 }

@@ -8,13 +8,17 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
+var _cors = require('cors');
+
+var _cors2 = _interopRequireDefault(_cors);
+
 var _mongoose = require('mongoose');
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-var _main = require('./routes/main.routes');
+var _index = require('./routes/index.routes');
 
-var _main2 = _interopRequireDefault(_main);
+var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,6 +28,8 @@ app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({
   extended: true
 }));
+
+app.use((0, _cors2.default)());
 
 //db
 
@@ -36,11 +42,9 @@ _mongoose2.default.connect(app.get('database')).then(function () {
   return console.error(err);
 });
 
-app.use('/api/v1', _main2.default);
+app.use('/api/v1', _index2.default);
 
 app.set('port', process.env.PORT || 3005);
-// arrow functions
-
 app.listen(app.get('port'), function () {
   console.log("Node app is running at localhost:" + app.get('port'));
 });

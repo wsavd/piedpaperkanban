@@ -7,6 +7,9 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+import cors from 'cors'
+app.use(cors());
+
 //db
 import mongoose from 'mongoose'
 mongoose.Promise = global.Promise;
@@ -16,13 +19,10 @@ mongoose.connect(app.get('database'))
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
-import routes from './routes/main.routes';
-
+import routes from './routes/index.routes';
 app.use('/api/v1', routes);
 
 app.set('port', (process.env.PORT || 3005))
-// arrow functions
-
 app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
