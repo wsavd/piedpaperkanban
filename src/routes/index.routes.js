@@ -3,19 +3,19 @@ const router = express.Router();
 
 import cardCtrl from '../controllers/card.controller'
 
-//GET /api/v1/items - Get list of items
-router.get('/items', cardCtrl.read);
-//GET /api/v1/items/:id - Get specific item
-router.get('/items/:id', cardCtrl.readSingle);
+//GET /api/v1/cards - Get list of cards
+router.get('/cards', cardCtrl.read);
+//GET /api/v1/cards/:id - Get specific card
+router.get('/cards/:id', cardCtrl.readSingle);
 
-//POST /api/v1/items - Create a new item
-router.post('/items', cardCtrl.create);
+//POST /api/v1/cards - Create a new card
+router.post('/cards', cardCtrl.create);
 
-//PUT /api/v1/items/:id - Update specific item
-router.put('/items/:id', cardCtrl.update)
+//PUT /api/v1/cards/:id - Update specific card
+router.put('/cards/:id', cardCtrl.update)
 
-//DELETE /api/v1/items/:id - Delete specific item
-router.delete('/items/:id', cardCtrl.remove);
+//DELETE /api/v1/cards/:id - Delete specific card
+router.delete('/cards/:id', cardCtrl.remove);
 
 
 //router.post('/echo', cardCtrl.echo);
